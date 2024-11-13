@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<div class="auth-container">
+  <div class="auth-sidebar">
+    <div>
+      <h2>Welcome Back!</h2>
+      <p>Access your account and manage your portfolio with our secure authentication system.</p>
+    </div>
+    <div>
+      <p>Protected by advanced encryption and multi-factor authentication.</p>
+    </div>
+  </div>
+
+  <div class="auth-main">
+    <form class="auth-form" id="authForm">
+      <div class="form-header">
+        <h1>Sign In</h1>
+        <p>Continue with your preferred method</p>
+      </div>
+
+      <div class="social-buttons">
+        <button type="button" class="social-button" onclick="socialSignIn('google')">
+          <i class="fab fa-google"></i>
+        </button>
+        <button type="button" class="social-button" onclick="socialSignIn('facebook')">
+          <i class="fab fa-facebook-f"></i>
+        </button>
+        <button type="button" class="social-button" onclick="socialSignIn('apple')">
+          <i class="fab fa-apple"></i>
+        </button>
+      </div>
+
+      <div class="divider">or</div>
+
+      <div class="form-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input type="email" class="form-control" id="email" placeholder="Email address" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input type="password" class="form-control" id="password" placeholder="Password" required>
+        <i class="far fa-eye password-toggle" id="passwordToggle"></i>
+        <div class="password-strength">
+          <div class="password-strength-bar" id="strengthBar"></div>
+        </div>
+        <div class="strength-text" id="strengthText"></div>
+      </div>
+
+      <div class="checkbox-container">
+        <div class="custom-checkbox" id="rememberMe">
+          <i class="fas fa-check"></i>
+        </div>
+        <label>Remember me</label>
+      </div>
+
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span>Sign In</span>
+        <div class="loader">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+      </button>
+
+      <div class="error-message" id="errorMessage"></div>
+      <div class="success-message" id="successMessage"></div>
+
+      <div class="otp-container" id="otpContainer">
+        <p>Enter the verification code sent to your email</p>
+        <div class="otp-inputs">
+          <input type="text" maxlength="1" class="otp-input" data-index="1">
+          <input type="text" maxlength="1" class="otp-input" data-index="2">
+          <input type="text" maxlength="1" class="otp-input" data-index="3">
+          <input type="text" maxlength="1" class="otp-input" data-index="4">
+        </div>
+        <p>Didn't receive the code? <a href="#" onclick="resendOTP()">Resend</a></p>
+      </div>
+
+      <div class="terms">
+        By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="switch-form">
+        Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
